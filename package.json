@@ -1,0 +1,16 @@
+{
+  "name": "discord-roulette-bot",
+  "version": "1.0.0",
+  "description": "Discord bot with roulette game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.51",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  }
+}

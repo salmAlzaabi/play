@@ -1,0 +1,8 @@
+{
+  "token": "",
+  "streaming": {
+    "enabled": true,
+    "name": "HOOK",
+    "url": "https://twitch.tv/HOOK"  
+  }
+}

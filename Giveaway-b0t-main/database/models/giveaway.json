@@ -1,0 +1,275 @@
+[
+  {
+    "prize": "dd",
+    "endsAt": 1766409743593,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "575366733616119838"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1452652451994796033",
+    "channelId": "1445804138666655888",
+    "guildId": "1442223803043151924",
+    "winners": [
+      "575366733616119838"
+    ]
+  },
+  {
+    "prize": "dd",
+    "endsAt": 1766409842489,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "575366733616119838",
+      "956991141033681006"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1452652823647883487",
+    "channelId": "1442223804406562959",
+    "guildId": "1442223803043151924",
+    "winners": [
+      "956991141033681006"
+    ]
+  },
+  {
+    "prize": "d",
+    "endsAt": 1766418361866,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "575366733616119838"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1452688138949492896",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "575366733616119838"
+    ]
+  },
+  {
+    "prize": "dad",
+    "endsAt": 1766419074101,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "1196703404072910898",
+      "575366733616119838",
+      "902181150846513183"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1452691587674149016",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "902181150846513183"
+    ]
+  },
+  {
+    "prize": "dw",
+    "endsAt": 1766419155420,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "575366733616119838"
+    ],
+    "requirements": {
+      "role": "1452691792117104702"
+    },
+    "status": "ended",
+    "messageId": "1452691929081974885",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "575366733616119838"
+    ]
+  },
+  {
+    "prize": "dw",
+    "endsAt": 1766419205956,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "902181150846513183",
+      "575366733616119838",
+      "1196703404072910898"
+    ],
+    "requirements": {
+      "age": 10
+    },
+    "status": "ended",
+    "messageId": "1452692140747395185",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "902181150846513183"
+    ]
+  },
+  {
+    "prize": "dw",
+    "endsAt": 1766419365746,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "1196703404072910898"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1452692349481259211",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "1196703404072910898"
+    ]
+  },
+  {
+    "prize": "ds",
+    "endsAt": 1766419375835,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "1196703404072910898",
+      "575366733616119838"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1452692392002978015",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "1196703404072910898"
+    ]
+  },
+  {
+    "prize": "d",
+    "endsAt": 1766419411361,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "575366733616119838",
+      "902181150846513183"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1452692792529649747",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "575366733616119838"
+    ]
+  },
+  {
+    "prize": "ds",
+    "endsAt": 1766702655167,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "575366733616119838",
+      "917579853446926356"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1453880808367722729",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "917579853446926356"
+    ]
+  },
+  {
+    "prize": "عك",
+    "endsAt": 1766749490668,
+    "winnersCount": 1,
+    "hostedBy": "1363512743667302653",
+    "participants": [
+      "1363512743667302653"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1454077459040440416",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "1363512743667302653"
+    ]
+  },
+  {
+    "prize": "جوكر عمك",
+    "endsAt": 1766751398656,
+    "winnersCount": 1,
+    "hostedBy": "1149281132861476875",
+    "participants": [
+      "1149281132861476875",
+      "575366733616119838"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1454085251780313130",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "575366733616119838"
+    ]
+  },
+  {
+    "prize": "dwd",
+    "endsAt": 1766843442198,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "575366733616119838"
+    ],
+    "requirements": {},
+    "status": "ended",
+    "messageId": "1454471305712898222",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "575366733616119838"
+    ]
+  },
+  {
+    "prize": "ds",
+    "endsAt": 1766857643712,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "575366733616119838"
+    ],
+    "requirements": {
+      "role": "1452691792117104702"
+    },
+    "status": "ended",
+    "messageId": "1454530621140631593",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "575366733616119838"
+    ]
+  },
+  {
+    "prize": "sda",
+    "endsAt": 1766857704702,
+    "winnersCount": 1,
+    "hostedBy": "575366733616119838",
+    "participants": [
+      "575366733616119838",
+      "772546533203247115"
+    ],
+    "requirements": {
+      "voiceVal": true
+    },
+    "status": "ended",
+    "messageId": "1454530876607037561",
+    "channelId": "1452675062313521214",
+    "guildId": "1452675061344632854",
+    "winners": [
+      "772546533203247115"
+    ]
+  }
+]
