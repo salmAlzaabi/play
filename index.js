@@ -86,10 +86,6 @@ client.once('ready', () => {
   }
 });
 
-const token = config.token || process.env.DISCORD_TOKEN;
-if (!token) {
-  console.error('No bot token provided. ضع التوكن في config.json أو في متغير البيئة DISCORD_TOKEN');
-  process.exit(1);
-}
-
-client.login(process.env.TOKEN || config.token);
+//  الأسطر الجديدة والمصلحة:
+const token = process.env.DISCORD_TOKEN || process.env.TOKEN || config.token;
+client.login(token);
