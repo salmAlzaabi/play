@@ -86,6 +86,6 @@ client.once('ready', () => {
   }
 });
 
-//  الأسطر الجديدة والمصلحة:
+require('./music.js')(client);
 const token = process.env.DISCORD_TOKEN || process.env.TOKEN || config.token;
 client.login(token);
