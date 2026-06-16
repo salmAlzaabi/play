@@ -86,6 +86,5 @@ client.once('ready', () => {
   }
 });
 
-require('./music.js')(client);
 const token = process.env.DISCORD_TOKEN || process.env.TOKEN || config.token;
 client.login(token);
