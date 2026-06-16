@@ -86,5 +86,6 @@ client.once('ready', () => {
   }
 });
 
+//  الأسطر الجديدة والمصلحة:
 const token = process.env.DISCORD_TOKEN || process.env.TOKEN || config.token;
 client.login(token);
