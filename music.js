@@ -4,6 +4,9 @@ const { YoutubeExtractor } = require('@discord-player/extractor');
 // قائمة الآيديات المسموح لها فقط باستعمال البوت
 const ALLOWED_USERS = ['1373005291880316928', '1195827812565798953'];
 
+// آيدي الروم الصوتي اللي تبي البوت يقعد فيه دائماً
+const VOICE_CHANNEL_ID = '1515484658400497725';
+
 module.exports = (client) => {
     // إنشاء مشغل الأغاني وتثبيته في الـ client
     const player = new Player(client);
@@ -11,21 +14,47 @@ module.exports = (client) => {
     // تسجيل مستخرج اليوتيوب
     player.extractors.register(YoutubeExtractor, {});
 
+    // --- كود الدخول التلقائي للروم عند تشغيل البوت ---
+    client.on('ready', async () => {
+        console.log(`📡 جاري محاولة دخول الروم الصوتي الدائم...`);
+        try {
+            const channel = await client.channels.fetch(VOICE_CHANNEL_ID);
+            if (channel && channel.isVoiceBased()) {
+                // إنشاء اتصال بالروم الصوتي ليكون جاهزاً للاستماع والأوامر
+                await player.nodes.create(channel.guild, {
+                    nodeOptions: {
+                        metadata: { channel: null } // سيتم تحديثه لاحقاً عند كتابة الأوامر
+                    }
+                });
+                
+                // الدخول الفعلي للروم
+                const connection = await channel.connect();
+                console.log(`✅ البوت متصل الآن بنجاح في الروم: ${channel.name}`);
+            } else {
+                console.error('❌ الآيدي المكتوب ليس لروم صوتي صحيح.');
+            }
+        } catch (error) {
+            console.error('❌ حدث خطأ أثناء محاولة دخول الروم الصوتي تلقائياً:', error);
+        }
+    });
+
     // أحداث المشغل (Events)
     player.events.on('playerStart', (queue, track) => {
-        queue.metadata.channel.send(`🎵 **جاري تشغيل:** ${track.title}`);
+        // تأكد من وجود روم رسائل مخصص قبل الإرسال
+        if (queue.metadata && queue.metadata.channel) {
+            queue.metadata.channel.send(`🎵 **جاري تشغيل:** ${track.title}`);
+        }
     });
 
     player.events.on('emptyQueue', (queue) => {
-        queue.metadata.channel.send('📥 انتهت قائمة الانتظار.');
+        if (queue.metadata && queue.metadata.channel) {
+            queue.metadata.channel.send('📥 انتهت قائمة الانتظار.');
+        }
     });
 
-    // الاستماع للأوامر داخل نفس الملف
+    // الاستماع للأوامر
     client.on('messageCreate', async (message) => {
-        // تجاهل رسائل البوتات أو الرسائل التي لا تبدأ بالبريفكس حقك
         if (message.author.bot || !message.content.startsWith('!')) return;
-
-        // التحقق من الآيديات المسموح لها فقط
         if (!ALLOWED_USERS.includes(message.author.id)) return;
 
         const args = message.content.slice(1).trim().split(/ +/);
@@ -36,13 +65,14 @@ module.exports = (client) => {
             const query = args.join(' ');
             if (!query) return message.reply('❌ يرجى كتابة اسم الأغنية أو الرابط!');
 
-            const channel = message.member.voice.channel;
-            if (!channel) return message.reply('❌ لازم تكون في روم صوتي أولاً!');
+            // الحين بما أن البوت قاعد بالروم، بناخذ الروم الصوتي للبوت نفسه أو للمستخدم
+            const channel = message.member.voice.channel || message.guild.members.me.voice.channel;
+            if (!channel) return message.reply('❌ البوت ليس في روم صوتي، ولا أنت متصل بروم حالياً!');
 
             try {
                 const { track } = await player.play(channel, query, {
                     nodeOptions: {
-                        metadata: { channel: message.channel }
+                        metadata: { channel: message.channel } // هنا نحدد الروم اللي انكتب فيه الأمر عشان يرسل التنبيهات فيه
                     }
                 });
 
@@ -74,13 +104,14 @@ module.exports = (client) => {
             return message.reply('▶️ تم استئناف التشغيل.');
         }
 
-        // 4. أمر قفل والخروج: !قفل
+        // 4. أمر قفل وتصفير القائمة: !قفل (تعديل: الحين ما يطلع من الروم، بس يصفّر الأغاني)
         if (command === 'قفل') {
             const queue = player.nodes.get(message.guild.id);
-            if (!queue) return message.reply('❌ البوت مو متصل بروم صوتي أصلاً!');
+            if (!queue) return message.reply('❌ ما في شيء شغال حالياً لقفله!');
             
-            queue.delete();
-            return message.reply('⏹️ تم إيقاف كل شيء والخروج من الروم.');
+            queue.tracks.clear(); // مسح الـ Queue
+            if (queue.isPlaying()) queue.node.stop(); // إيقاف الأغنية الحالية
+            return message.reply('⏹️ تم إيقاف التشغيل وتصفير قائمة الانتظار (البوت سيبقى في الروم).');
         }
 
         // 5. أمر التخطي: !سكب
