@@ -2,7 +2,7 @@
   "token": "",
   "streaming": {
     "enabled": true,
-    "name": "HOOK",
+    "name": "SA",
     "url": "https://twitch.tv/HOOK"  
   }
 }
